@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class BCImageOptions;
+
 @interface BCImageLoader : NSObject
 
 + (instancetype)defaultLoader;
@@ -18,15 +20,11 @@
  * 实例方法。使用多线程优化性能
  */
 - (void)bc_loadImageWithURL:(NSString *)url
-                placeholder:(NSString *)placeholder
-                     corner:(CGFloat)corner
-                     bounds:(CGRect)bounds
+                    options:(BCImageOptions *)options
                 loadHandler:(void(^)(UIImage *))loadHandler;
 
 - (void)bc_loadImageWithData:(NSData *)data
-                 placeholder:(NSString *)placeholder
-                      corner:(CGFloat)corner
-                      bounds:(CGRect)bounds
+                     options:(BCImageOptions *)options
                  loadHandler:(void(^)(UIImage *))loadHandler;
 
 @end

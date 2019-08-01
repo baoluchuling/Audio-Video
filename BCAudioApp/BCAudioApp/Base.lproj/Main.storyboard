@@ -32,7 +32,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6075.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="0h9-mW-AVa">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0h9-mW-AVa">
                                                     <rect key="frame" x="25" y="10" width="50" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="2bM-Tu-kNM"/>
@@ -128,7 +128,4 @@
             <point key="canvasLocation" x="-148" y="-176"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="6075.jpg" width="1920" height="1080"/>
-    </resources>
 </document>

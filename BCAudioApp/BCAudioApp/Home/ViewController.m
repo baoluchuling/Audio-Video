@@ -10,6 +10,7 @@
 #import "BCAudioListCell.h"
 #import "BCAudioInfo.h"
 #import "BCAudioManager.h"
+#import "BCImageOptions.h"
 
 #import "UIImageView+NetImg.h"
 
@@ -66,7 +67,12 @@
     
     BCAudioInfo *info = self.musicArray[indexPath.row];
     cell.titleLabel.text = info.title;
-    [cell.coverImage bc_setImageData:info.artwork withCorner:4 placeholder:nil];
+    
+    BCImageOptions *options = [[BCImageOptions alloc] init];
+    options.cornerRadius = @[@5];
+    
+    [cell.coverImage bc_setImageData:info.artwork options:options];
+     
     return cell;
 }
 

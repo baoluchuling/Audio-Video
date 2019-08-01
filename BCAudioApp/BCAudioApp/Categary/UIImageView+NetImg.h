@@ -7,6 +7,8 @@
 //
 #import <UIKit/UIKit.h>
 
+@class BCImageOptions;
+
 @interface UIImageView (NetImg)
 
 - (void)bc_setImageUrl:(NSString *)imgurl;
@@ -14,7 +16,7 @@
 
 - (void)bc_setImageData:(NSData *)data;
 - (void)bc_setImageData:(NSData *)data placeholder:(NSString *)placeholder;
-- (void)bc_setImageData:(NSData *)data withCorner:(CGFloat)corner placeholder:(NSString *)placeholder;
+- (void)bc_setImageData:(NSData *)data options:(BCImageOptions *)options;
 
 @end
 

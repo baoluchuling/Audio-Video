@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7607A82A22F329C0006666C6 /* BCImageOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7607A82922F329C0006666C6 /* BCImageOptions.m */; };
 		7620095E228EAF7800046F2B /* BCAudioListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7620095D228EAF7800046F2B /* BCAudioListCell.m */; };
 		762A962D22F3176C001DE07C /* BCImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 762A962C22F3176C001DE07C /* BCImageLoader.m */; };
 		7646203C22D43E3800178C17 /* BCPhotoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7646203B22D43E3800178C17 /* BCPhotoListViewController.m */; };
@@ -68,6 +69,8 @@
 
 /* Begin PBXFileReference section */
 		52602002AE1131062EA1BB71 /* libPods-BCAudioApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BCAudioApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7607A82822F329C0006666C6 /* BCImageOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCImageOptions.h; sourceTree = "<group>"; };
+		7607A82922F329C0006666C6 /* BCImageOptions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCImageOptions.m; sourceTree = "<group>"; };
 		7620095C228EAF7800046F2B /* BCAudioListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCAudioListCell.h; sourceTree = "<group>"; };
 		7620095D228EAF7800046F2B /* BCAudioListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCAudioListCell.m; sourceTree = "<group>"; };
 		762A962B22F3176C001DE07C /* BCImageLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCImageLoader.h; sourceTree = "<group>"; };
@@ -187,6 +190,8 @@
 				762A962C22F3176C001DE07C /* BCImageLoader.m */,
 				76B59B9F22E1BDB5008644DB /* BCImageCache.h */,
 				76B59BA322E1BDB5008644DB /* BCImageCache.m */,
+				7607A82822F329C0006666C6 /* BCImageOptions.h */,
+				7607A82922F329C0006666C6 /* BCImageOptions.m */,
 			);
 			path = LoadImage;
 			sourceTree = "<group>";
@@ -574,6 +579,7 @@
 				76BE695F2290165400ECFB2F /* BCAudioUtil.m in Sources */,
 				76B59B9422E1AFCE008644DB /* BCAudioManager.m in Sources */,
 				76BE695C229006D700ECFB2F /* BCAudioInfo.m in Sources */,
+				7607A82A22F329C0006666C6 /* BCImageOptions.m in Sources */,
 				76B59BA422E1BDB5008644DB /* BCDiskCache.m in Sources */,
 				76B59BA522E1BDB5008644DB /* BCMemoryCache.m in Sources */,
 				7620095E228EAF7800046F2B /* BCAudioListCell.m in Sources */,
