@@ -1,0 +1,5 @@
+/BCAudioApp/BCAudioApp/Resource/Music
+*.mp3
+/BCAudioApp/Pods
+/BCAudioApp/Podfile.lock
+/BCAudioApp/BCAudioApp.xcworkspace
