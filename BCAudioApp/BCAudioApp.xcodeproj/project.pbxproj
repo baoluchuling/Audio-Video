@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7620095B228EAD1800046F2B /* music-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 76200959228EAD1800046F2B /* music-1.mp3 */; };
 		7620095E228EAF7800046F2B /* BCAudioListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7620095D228EAF7800046F2B /* BCAudioListCell.m */; };
 		762A962D22F3176C001DE07C /* BCImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 762A962C22F3176C001DE07C /* BCImageLoader.m */; };
 		7646203C22D43E3800178C17 /* BCPhotoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7646203B22D43E3800178C17 /* BCPhotoListViewController.m */; };
@@ -21,7 +20,6 @@
 		76673CFE228E958400BD6BC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76673CFD228E958400BD6BC6 /* Assets.xcassets */; };
 		76673D01228E958400BD6BC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76673CFF228E958400BD6BC6 /* LaunchScreen.storyboard */; };
 		76673D04228E958400BD6BC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76673D03228E958400BD6BC6 /* main.m */; };
-		76B59B6222E1AC00008644DB /* music-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 76BE69662292AE7700ECFB2F /* music-2.mp3 */; };
 		76B59B7B22E1AD5B008644DB /* music-17.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 76B59B6422E1AD5A008644DB /* music-17.mp3 */; };
 		76B59B7C22E1AD5B008644DB /* music-4.flac in Resources */ = {isa = PBXBuildFile; fileRef = 76B59B6522E1AD5A008644DB /* music-4.flac */; };
 		76B59B7D22E1AD5B008644DB /* music-11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 76B59B6622E1AD5A008644DB /* music-11.mp3 */; };
@@ -70,7 +68,6 @@
 
 /* Begin PBXFileReference section */
 		52602002AE1131062EA1BB71 /* libPods-BCAudioApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BCAudioApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		76200959228EAD1800046F2B /* music-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "music-1.mp3"; sourceTree = "<group>"; };
 		7620095C228EAF7800046F2B /* BCAudioListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCAudioListCell.h; sourceTree = "<group>"; };
 		7620095D228EAF7800046F2B /* BCAudioListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCAudioListCell.m; sourceTree = "<group>"; };
 		762A962B22F3176C001DE07C /* BCImageLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCImageLoader.h; sourceTree = "<group>"; };
@@ -158,7 +155,6 @@
 		76BE695E2290165400ECFB2F /* BCAudioUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCAudioUtil.m; sourceTree = "<group>"; };
 		76BE696022929C8000ECFB2F /* NSObject+BCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+BCModel.h"; sourceTree = "<group>"; };
 		76BE696122929C8000ECFB2F /* NSObject+BCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BCModel.m"; sourceTree = "<group>"; };
-		76BE69662292AE7700ECFB2F /* music-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "music-2.mp3"; sourceTree = "<group>"; };
 		A22F44703CA14C5BEBDD6493 /* Pods-BCAudioApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCAudioApp.release.xcconfig"; path = "Target Support Files/Pods-BCAudioApp/Pods-BCAudioApp.release.xcconfig"; sourceTree = "<group>"; };
 		ECE6C390B5582D9906D26550 /* Pods-BCAudioApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCAudioApp.debug.xcconfig"; path = "Target Support Files/Pods-BCAudioApp/Pods-BCAudioApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -305,8 +301,6 @@
 				76B59B7322E1AD5B008644DB /* music-23.mp3 */,
 				76B59B7822E1AD5B008644DB /* music-24.mp3 */,
 				76B59B6922E1AD5A008644DB /* music-25.mp3 */,
-				76200959228EAD1800046F2B /* music-1.mp3 */,
-				76BE69662292AE7700ECFB2F /* music-2.mp3 */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -492,13 +486,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76B59B6222E1AC00008644DB /* music-2.mp3 in Resources */,
 				76B59B8722E1AD5B008644DB /* music-19.mp3 in Resources */,
 				76B59B8C22E1AD5B008644DB /* music-3.mp3 in Resources */,
 				76B59B8D22E1AD5B008644DB /* music-9.flac in Resources */,
 				76B59B7B22E1AD5B008644DB /* music-17.mp3 in Resources */,
 				76B59B7C22E1AD5B008644DB /* music-4.flac in Resources */,
-				7620095B228EAD1800046F2B /* music-1.mp3 in Resources */,
 				76B59B9122E1AD5B008644DB /* music-7.mp3 in Resources */,
 				76B59B8A22E1AD5B008644DB /* music-23.mp3 in Resources */,
 				76B59B9022E1AD5B008644DB /* music-10.flac in Resources */,
