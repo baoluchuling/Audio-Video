@@ -2,7 +2,7 @@
 //  NSData+Security.m
 //  BCAudioApp
 //
-//  Created by 郭兆伟 on 2019/8/2.
+//  Created by boluchuling on 2019/8/2.
 //  Copyright © 2019 boluchuling. All rights reserved.
 //
 
