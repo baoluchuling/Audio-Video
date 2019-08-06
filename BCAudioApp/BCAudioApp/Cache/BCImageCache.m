@@ -19,8 +19,6 @@ static NSString *const kBCImageFolderName = @"com.boluchuling.cache.image";
 @property (nonatomic, strong) BCMemoryCache *memoryCache;
 @property (nonatomic, strong) BCDiskCache *diskCache;
 
-@property (nonatomic, strong) NSMutableDictionary *cacheTypeTable;
-
 @end
 
 static BCImageCache *imageCache = nil;
@@ -40,7 +38,6 @@ static BCImageCache *imageCache = nil;
 {
     self = [super init];
     if (self) {
-        self.cacheTypeTable = [NSMutableDictionary dictionary];
         self.memoryCache = [[BCMemoryCache alloc] init];
         
         NSString *fileFolder = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
@@ -52,15 +49,18 @@ static BCImageCache *imageCache = nil;
 
 - (id)objectForKey:(NSString *)key
 {
-    NSData *imgData = nil;
+    id imgData = nil;
     
     imgData = [self.memoryCache objectForKey:key];
 
     if (!imgData) {
-        imgData = [self.diskCache objectForKey:key];
+        NSData *originData = [self.diskCache objectForKey:key];
 
+        imgData = [UIImage imageWithData:originData scale:[UIScreen mainScreen].scale];
         // 保存到内存缓存中
-        [self.memoryCache setObject:imgData forKey:key];
+        if (imgData) {
+            [self.memoryCache setObject:imgData forKey:key];
+        }
     }
     
     return imgData;
@@ -69,7 +69,9 @@ static BCImageCache *imageCache = nil;
 - (void)setObject:(id)object forKey:(NSString *)key
 {
     [self.memoryCache setObject:object forKey:key];
-    [self.diskCache setObject:object forKey:key];
+    
+    NSData *data = UIImagePNGRepresentation(object);
+    [self.diskCache setObject:data forKey:key];
 }
 
 - (void)clearAllCaches

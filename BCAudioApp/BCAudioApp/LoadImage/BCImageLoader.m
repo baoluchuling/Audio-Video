@@ -7,9 +7,25 @@
 //
 
 #import "BCImageLoader.h"
-#import "NSString+Security.h"
 #import "BCImageCache.h"
 #import "BCImageOptions.h"
+
+#import "NSString+Security.h"
+#import "NSData+Security.h"
+
+UIImageOrientation UIImageOrientationForCGImagePropertyOrientation(cgOrientation) {
+    switch (cgOrientation) {
+        case kCGImagePropertyOrientationUp: return UIImageOrientationUp;
+        case kCGImagePropertyOrientationDown: return UIImageOrientationDown;
+        case kCGImagePropertyOrientationLeft: return UIImageOrientationLeft;
+        case kCGImagePropertyOrientationRight: return UIImageOrientationRight;
+        case kCGImagePropertyOrientationUpMirrored: return UIImageOrientationUpMirrored;
+        case kCGImagePropertyOrientationDownMirrored: return UIImageOrientationDownMirrored;
+        case kCGImagePropertyOrientationLeftMirrored: return UIImageOrientationLeftMirrored;
+        case kCGImagePropertyOrientationRightMirrored: return UIImageOrientationRightMirrored;
+            default: return UIImageOrientationUp;
+    }
+};
 
 static BCImageLoader *loader = nil;
 
@@ -35,24 +51,87 @@ static BCImageLoader *loader = nil;
 
 + (UIImage *)bc_loadImageWithURL:(NSString *)url
 {
+    if (url == nil || [url isEqualToString:@""]) {
+        return nil;
+    }
+    
     // 获取url的md5
     NSString *md5Key = url.md5;
     
     // 获取图片缓存
-    NSData *imageData = [[BCImageCache defaultCache] objectForKey:md5Key];
+    UIImage *image = [[BCImageCache defaultCache] objectForKey:md5Key];
     
     // 未找到缓存，重新下载
-    if (!imageData) {
-        imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+    if (!image) {
+        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+        
+        image = [UIImage imageWithData:imageData];
         
         // 存入缓存
-        [[BCImageCache defaultCache] setObject:imageData forKey:md5Key];
+        [[BCImageCache defaultCache] setObject:image forKey:md5Key];
     }
     
     // 个性化处理图片
     
-    return [UIImage imageWithData:imageData];
+    return image;
 }
+
++ (UIImage *)bc_loadImageWithData:(NSData *)imageData
+{
+    if (imageData == nil) {
+        return nil;
+    }
+    
+    // 获取data的md5
+    NSString *md5Key = imageData.md5;
+    
+    // 获取图片缓存
+    UIImage *image = [[BCImageCache defaultCache] objectForKey:md5Key];
+    
+    // 未找到缓存，重新下载
+    if (!image) {
+        image = [UIImage imageWithData:imageData];
+        
+        // 存入缓存
+        [[BCImageCache defaultCache] setObject:image forKey:md5Key];
+    }
+    
+    // 个性化处理图片
+    
+    return image;
+}
+
+//+ (UIImage *)decoderImageWithSource:(NSData *)source
+//{
+//    NSDictionary *imageSourceOptions =
+//    @{
+//        (__bridge NSString *)kCGImageSourceShouldCache: @NO // 原始图像不要解码
+//    };
+//    CGImageSourceRef imageSource = imageSource = CGImageSourceCreateWithData((__bridge CFDataRef)source, (__bridge CFDictionaryRef)imageSourceOptions);
+//    if (!imageSource) {
+//        return [UIImage imageWithData:source];
+//    }
+//
+//    CFDictionaryRef imageProperties = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, NULL);
+//
+//    int orientation = [(NSNumber *)CFDictionaryGetValue(imageProperties, kCGImagePropertyOrientation) intValue];
+//
+//    UIImageOrientation imageOrientation = UIImageOrientationForCGImagePropertyOrientation(orientation);
+//
+//    NSDictionary *downsampleOptions =
+//    @{
+//        (__bridge NSString *)kCGImageSourceShouldCacheImmediately: @YES,  // 缩小图像的同时进行解码
+//    };
+//    CGImageRef imageRef = CGImageSourceCreateImageAtIndex(imageSource, 0, (__bridge CFDictionaryRef)downsampleOptions);
+//
+//    UIImage * image = [[UIImage alloc] initWithCGImage:imageRef scale:[UIScreen mainScreen].scale orientation:imageOrientation];
+//
+//    CGImageRelease(imageRef);
+//
+//    CFRelease(imageSource);
+//
+//    return image;
+//}
 
 #pragma mark instance method
 - (void)bc_loadImageWithURL:(NSString *)url
@@ -100,7 +179,7 @@ static BCImageLoader *loader = nil;
             });
         }
         
-        UIImage *image = [BCImageLoader bc_processImage:[UIImage imageWithData:data]
+        UIImage *image = [BCImageLoader bc_processImage:[BCImageLoader bc_loadImageWithData:data]
                                             withOptions:options];
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -123,6 +202,10 @@ static BCImageLoader *loader = nil;
 #pragma mark utils
 + (UIImage *)bc_processImage:(UIImage *)source withOptions:(BCImageOptions *)options
 {
+    if (!source || ![source isKindOfClass:[UIImage class]]) {
+        return nil;
+    }
+    
     if (!options || (!options.backgroundColor && !options.cornerRadius)) {
         return source;
     }
@@ -139,12 +222,14 @@ static BCImageLoader *loader = nil;
         return source;
     }
     
+    CGRect bounds = CGRectMake(0, 0, options.outputSize.width, options.outputSize.height);
+
     // 设置背景
     if (needBackColor) {
+        CGContextAddRect(context, bounds);
         CGContextSetFillColorWithColor(context, options.backgroundColor.CGColor);
+        CGContextFillPath(context);
     }
-    
-    CGRect bounds = CGRectMake(0, 0, options.outputSize.width, options.outputSize.height);
     
     // 配置圆角值
     if (options.cornerRadius) {
@@ -156,7 +241,7 @@ static BCImageLoader *loader = nil;
         
         CGContextClip(context);
     }
-    
+        
     [source drawInRect:bounds];
     
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();

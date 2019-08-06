@@ -62,11 +62,10 @@ NSString *const AppDelegateReceiveRemoteEventsNotification = @"AppDelegateReceiv
     return YES;
 
 }
-/// 锁屏页面的控制事件(必须在这里重写该方法，在播放页面重写不起作用)
+
 - (void)remoteControlReceivedWithEvent:(UIEvent *)event
 {
     if (event.type == UIEventTypeRemoteControl) {
-        // 发送通知给音频播放界面 进行某些处理
         [[NSNotificationCenter defaultCenter] postNotificationName:AppDelegateReceiveRemoteEventsNotification object:event];
     }
 }

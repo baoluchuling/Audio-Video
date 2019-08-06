@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7607A82A22F329C0006666C6 /* BCImageOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7607A82922F329C0006666C6 /* BCImageOptions.m */; };
+		7607A82D22F3C408006666C6 /* NSData+Security.m in Sources */ = {isa = PBXBuildFile; fileRef = 7607A82C22F3C408006666C6 /* NSData+Security.m */; };
 		7620095E228EAF7800046F2B /* BCAudioListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7620095D228EAF7800046F2B /* BCAudioListCell.m */; };
 		762A962D22F3176C001DE07C /* BCImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 762A962C22F3176C001DE07C /* BCImageLoader.m */; };
 		7646203C22D43E3800178C17 /* BCPhotoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7646203B22D43E3800178C17 /* BCPhotoListViewController.m */; };
@@ -21,6 +22,7 @@
 		76673CFE228E958400BD6BC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76673CFD228E958400BD6BC6 /* Assets.xcassets */; };
 		76673D01228E958400BD6BC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76673CFF228E958400BD6BC6 /* LaunchScreen.storyboard */; };
 		76673D04228E958400BD6BC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76673D03228E958400BD6BC6 /* main.m */; };
+		767410FA22F923D700A9A198 /* BCDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 767410F922F923D700A9A198 /* BCDateFormatter.m */; };
 		76B59B7B22E1AD5B008644DB /* music-17.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 76B59B6422E1AD5A008644DB /* music-17.mp3 */; };
 		76B59B7C22E1AD5B008644DB /* music-4.flac in Resources */ = {isa = PBXBuildFile; fileRef = 76B59B6522E1AD5A008644DB /* music-4.flac */; };
 		76B59B7D22E1AD5B008644DB /* music-11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 76B59B6622E1AD5A008644DB /* music-11.mp3 */; };
@@ -71,6 +73,8 @@
 		52602002AE1131062EA1BB71 /* libPods-BCAudioApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BCAudioApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7607A82822F329C0006666C6 /* BCImageOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCImageOptions.h; sourceTree = "<group>"; };
 		7607A82922F329C0006666C6 /* BCImageOptions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCImageOptions.m; sourceTree = "<group>"; };
+		7607A82B22F3C408006666C6 /* NSData+Security.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+Security.h"; sourceTree = "<group>"; };
+		7607A82C22F3C408006666C6 /* NSData+Security.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+Security.m"; sourceTree = "<group>"; };
 		7620095C228EAF7800046F2B /* BCAudioListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCAudioListCell.h; sourceTree = "<group>"; };
 		7620095D228EAF7800046F2B /* BCAudioListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCAudioListCell.m; sourceTree = "<group>"; };
 		762A962B22F3176C001DE07C /* BCImageLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCImageLoader.h; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 		76673D00228E958400BD6BC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76673D02228E958400BD6BC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76673D03228E958400BD6BC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		767410F822F923D700A9A198 /* BCDateFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCDateFormatter.h; sourceTree = "<group>"; };
+		767410F922F923D700A9A198 /* BCDateFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCDateFormatter.m; sourceTree = "<group>"; };
 		76B59B6422E1AD5A008644DB /* music-17.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "music-17.mp3"; sourceTree = "<group>"; };
 		76B59B6522E1AD5A008644DB /* music-4.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = "music-4.flac"; sourceTree = "<group>"; };
 		76B59B6622E1AD5A008644DB /* music-11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "music-11.mp3"; sourceTree = "<group>"; };
@@ -263,12 +269,8 @@
 				7641C22222F31B6C00F27009 /* LoadImage */,
 				764DEFD622A50E20002EDECA /* Performance */,
 				76BE69652292AE6A00ECFB2F /* Resource */,
-				764DEFCF22A27481002EDECA /* View */,
-				764DEFD022A27BAD002EDECA /* Animation */,
-				76BE69632292AE5200ECFB2F /* Utils */,
-				76BE69642292AE6000ECFB2F /* Model */,
-				76BE6956228EB70900ECFB2F /* Player */,
 				7646203922D43E0100178C17 /* Photo */,
+				767410F722F923A700A9A198 /* Audio */,
 				76BE69682292AE9300ECFB2F /* Home */,
 				76673CF4228E958200BD6BC6 /* AppDelegate.h */,
 				76673CF5228E958200BD6BC6 /* AppDelegate.m */,
@@ -278,6 +280,18 @@
 				76673D03228E958400BD6BC6 /* main.m */,
 			);
 			path = BCAudioApp;
+			sourceTree = "<group>";
+		};
+		767410F722F923A700A9A198 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				764DEFCF22A27481002EDECA /* View */,
+				764DEFD022A27BAD002EDECA /* Animation */,
+				76BE69632292AE5200ECFB2F /* Utils */,
+				76BE69642292AE6000ECFB2F /* Model */,
+				76BE6956228EB70900ECFB2F /* Player */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 		76B59B6322E1AC1E008644DB /* Music */ = {
@@ -330,6 +344,8 @@
 				76B59BA922E1BDC7008644DB /* UIImageView+NetImg.m */,
 				76B59BAD22E1BDC7008644DB /* NSString+Security.h */,
 				76B59BAA22E1BDC7008644DB /* NSString+Security.m */,
+				7607A82B22F3C408006666C6 /* NSData+Security.h */,
+				7607A82C22F3C408006666C6 /* NSData+Security.m */,
 			);
 			path = Categary;
 			sourceTree = "<group>";
@@ -389,6 +405,8 @@
 				76BE695E2290165400ECFB2F /* BCAudioUtil.m */,
 				76B59B9222E1AFCE008644DB /* BCAudioManager.h */,
 				76B59B9322E1AFCE008644DB /* BCAudioManager.m */,
+				767410F822F923D700A9A198 /* BCDateFormatter.h */,
+				767410F922F923D700A9A198 /* BCDateFormatter.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -459,6 +477,7 @@
 		76673CE9228E958200BD6BC6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = BC;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = boluchuling;
 				TargetAttributes = {
@@ -562,6 +581,7 @@
 				76BE6955228EB6F400ECFB2F /* BCAudioPlayerViewController.m in Sources */,
 				76B59BB922E5D356008644DB /* BCAssetManager.m in Sources */,
 				76BE696222929C8000ECFB2F /* NSObject+BCModel.m in Sources */,
+				7607A82D22F3C408006666C6 /* NSData+Security.m in Sources */,
 				76B59BBC22E5DFA6008644DB /* UIImageView+Photo.m in Sources */,
 				76B59BB022E1BDC7008644DB /* NSString+Security.m in Sources */,
 				76B59BA622E1BDB5008644DB /* BCImageCache.m in Sources */,
@@ -581,6 +601,7 @@
 				76BE695C229006D700ECFB2F /* BCAudioInfo.m in Sources */,
 				7607A82A22F329C0006666C6 /* BCImageOptions.m in Sources */,
 				76B59BA422E1BDB5008644DB /* BCDiskCache.m in Sources */,
+				767410FA22F923D700A9A198 /* BCDateFormatter.m in Sources */,
 				76B59BA522E1BDB5008644DB /* BCMemoryCache.m in Sources */,
 				7620095E228EAF7800046F2B /* BCAudioListCell.m in Sources */,
 			);
@@ -726,7 +747,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = PC5E4KXJH5;
 				INFOPLIST_FILE = BCAudioApp/Info.plist;
@@ -735,8 +756,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.boluchuling.BCAudioApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.boluchuling.AudioAPP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = audioapp;
 				SWIFT_OBJC_BRIDGING_HEADER = "BCAudioApp/Player/BCAudioApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -750,7 +772,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = PC5E4KXJH5;
 				INFOPLIST_FILE = BCAudioApp/Info.plist;
@@ -759,8 +781,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.boluchuling.BCAudioApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.boluchuling.AudioAPP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = audioapp;
 				SWIFT_OBJC_BRIDGING_HEADER = "BCAudioApp/Player/BCAudioApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

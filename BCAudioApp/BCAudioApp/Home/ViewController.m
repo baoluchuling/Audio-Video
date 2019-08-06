@@ -16,6 +16,7 @@
 
 #import "BCAudioPlayerViewController.h"
 #import "BCPhotoListViewController.h"
+#import "BCDateFormatter.h"
 
 @interface ViewController () <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
 
@@ -33,7 +34,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     self.tableView.hidden = YES;
     
@@ -49,17 +49,18 @@
 - (IBAction)rightAction:(id)sender {
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        
+
         NSArray *pathArray = [BCAudioManager fetchBundleAudioInfoWithType:@"mp3"];
-        
+
         [BCAudioInfo batchObtainAudioInfoWithPaths:pathArray complete:^(NSArray *array) {
             [self.musicArray addObjectsFromArray:array];
             self.emptyView.hidden = YES;
             self.tableView.hidden = NO;
             [self.tableView reloadData];
         }];
-        
+
     });
+
 }
 
 - (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -70,6 +71,7 @@
     
     BCImageOptions *options = [[BCImageOptions alloc] init];
     options.cornerRadius = @[@5];
+    options.backgroundColor = [UIColor whiteColor];
     
     [cell.coverImage bc_setImageData:info.artwork options:options];
      

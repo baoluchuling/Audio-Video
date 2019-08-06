@@ -17,11 +17,32 @@
 @property (nonatomic, strong) dispatch_queue_t queue;
 
 // 待修改
-@property (nonatomic, strong) NSMutableDictionary *cacheTable;
+@property (nonatomic, strong) NSCache *cacheTable;
 
 @end
 
 @implementation BCMemoryCache
+
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(memoryWarningProcessing) name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
+    }
+    
+    return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
+}
+
+- (void)memoryWarningProcessing
+{
+    [self removeAllObjects];
+}
 
 - (__kindof NSObject*)objectForKey:(NSString *)key
 {
@@ -66,10 +87,10 @@
     return _queue;
 }
 
-- (NSMutableDictionary *)cacheTable
+- (NSCache *)cacheTable
 {
     if (!_cacheTable) {
-        _cacheTable = [NSMutableDictionary dictionary];
+        _cacheTable = [[NSCache alloc] init];
     }
     
     return _cacheTable;

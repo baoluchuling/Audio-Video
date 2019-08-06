@@ -56,8 +56,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ZRZ-C8-xDb"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="S2S-2P-7d5"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="jz6-Vi-LVf"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="goa-hI-lAN"/>
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gkw-K6-Moc">
