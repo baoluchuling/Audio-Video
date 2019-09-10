@@ -44,22 +44,56 @@
     [self removeAllObjects];
 }
 
-- (__kindof NSObject*)objectForKey:(NSString *)key
+- (id)objectForKey:(NSString *)key
 {
-    __block NSObject *obj = nil;
+    __block id obj = nil;
     
     dispatch_sync(self.queue, ^{
         obj = [self.cacheTable objectForKey:key];
     });
+    
     return obj;
 }
 
-- (void)setObject:(__kindof NSObject *)object forKey:(NSString *)key
+- (void)setObject:(id)object forKey:(NSString *)key
 {
+    if (!key) {
+        return;
+    }
+    
     if (object == nil) {
         return;
     }
     
+    [self storeObject:object forKey:key];
+}
+
+- (void)appendObject:(id)object forKey:(NSString *)key
+{
+    if (!key) {
+        return;
+    }
+    
+    id oldData = [self.cacheTable objectForKey:key];
+    
+    if (object == nil) {
+        return;
+    }
+    
+    NSMutableData *data = [NSMutableData data];
+    
+    if (!oldData) {
+        [data appendData:object];
+    } else {
+        [data appendData:oldData];
+        [data appendData:object];
+    }
+    
+    [self storeObject:data forKey:key];
+}
+
+- (void)storeObject:(id)object forKey:(NSString *)key
+{
     __weak typeof(self) weakSelf = self;
     
     dispatch_barrier_async(self.queue, ^{
@@ -67,6 +101,13 @@
         __strong typeof(weakSelf) self = weakSelf;
         
         [self.cacheTable setObject:object forKey:key];
+    });
+}
+
+- (void)removeObjectForKey:(NSString *)key
+{
+    dispatch_barrier_sync(self.queue, ^{
+        [self.cacheTable removeObjectForKey:key];
     });
 }
 

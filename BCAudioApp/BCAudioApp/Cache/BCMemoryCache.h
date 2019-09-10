@@ -10,8 +10,12 @@
 
 @interface BCMemoryCache : NSObject
 
-- (__kindof NSObject*)objectForKey:(NSString *)key;
-- (void)setObject:(__kindof NSObject *)object forKey:(NSString *)key;
+- (id)objectForKey:(NSString *)key;
+
+- (void)setObject:(id)object forKey:(NSString *)key;
+- (void)appendObject:(id)object forKey:(NSString *)key;
+
+- (void)removeObjectForKey:(NSString *)key;
 - (void)removeAllObjects;
 
 @end

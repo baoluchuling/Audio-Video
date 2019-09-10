@@ -26,7 +26,7 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        self.imageView.frame = CGRectMake(2, 5, CGRectGetWidth(frame) - 4, CGRectGetHeight(frame) - 7);
+        self.imageView.frame = CGRectMake(2, 5, CGRectGetWidth(frame) - 4, CGRectGetWidth(frame) - 4);
         
         [self.button mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.imageView);

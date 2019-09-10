@@ -12,7 +12,13 @@
 
 - (instancetype)initWithPath:(NSString *)path;
 
-- (__kindof NSObject*)objectForKey:(NSString *)key;
-- (void)setObject:(__kindof NSObject *)object forKey:(NSString *)key;
+- (NSData*)objectForKey:(NSString *)key;
+- (void)setObject:(NSData *)object forKey:(NSString *)key;
+- (void)appendObject:(NSData *)object forKey:(NSString *)key;
+
+- (void)removeObjectForKey:(NSString *)key;
+- (void)removeAllObjects;
+
+- (size_t)sizeOfFileWithKey:(NSString *)key;
 
 @end

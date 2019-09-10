@@ -22,7 +22,12 @@
 		76673CFE228E958400BD6BC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76673CFD228E958400BD6BC6 /* Assets.xcassets */; };
 		76673D01228E958400BD6BC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76673CFF228E958400BD6BC6 /* LaunchScreen.storyboard */; };
 		76673D04228E958400BD6BC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76673D03228E958400BD6BC6 /* main.m */; };
+		7669EF442307E0EF00FF06D8 /* BCUploadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7669EF422307E0EF00FF06D8 /* BCUploadRequest.m */; };
+		7669EF472307E11100FF06D8 /* BCDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7669EF462307E11100FF06D8 /* BCDownloadManager.m */; };
+		7669EF4A2307EC7400FF06D8 /* BCCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7669EF492307EC7400FF06D8 /* BCCache.m */; };
 		767410FA22F923D700A9A198 /* BCDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 767410F922F923D700A9A198 /* BCDateFormatter.m */; };
+		767410FD22F93F6D00A9A198 /* BCControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 767410FC22F93F6D00A9A198 /* BCControlView.m */; };
+		7674112922FBC92700A9A198 /* certificate.der in Resources */ = {isa = PBXBuildFile; fileRef = 7674112822FBC92400A9A198 /* certificate.der */; };
 		76B59B7B22E1AD5B008644DB /* music-17.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 76B59B6422E1AD5A008644DB /* music-17.mp3 */; };
 		76B59B7C22E1AD5B008644DB /* music-4.flac in Resources */ = {isa = PBXBuildFile; fileRef = 76B59B6522E1AD5A008644DB /* music-4.flac */; };
 		76B59B7D22E1AD5B008644DB /* music-11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 76B59B6622E1AD5A008644DB /* music-11.mp3 */; };
@@ -66,6 +71,9 @@
 		76BE695C229006D700ECFB2F /* BCAudioInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 76BE695B229006D700ECFB2F /* BCAudioInfo.m */; };
 		76BE695F2290165400ECFB2F /* BCAudioUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 76BE695E2290165400ECFB2F /* BCAudioUtil.m */; };
 		76BE696222929C8000ECFB2F /* NSObject+BCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 76BE696122929C8000ECFB2F /* NSObject+BCModel.m */; };
+		76C8C88423098016001841C1 /* BCPresentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C8C88323098016001841C1 /* BCPresentTransition.m */; };
+		76C8C88723098289001841C1 /* UIViewController+BCTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C8C88623098289001841C1 /* UIViewController+BCTransitionAnimation.m */; };
+		76C8C88A2309909D001841C1 /* BCDismissTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C8C8892309909D001841C1 /* BCDismissTransition.m */; };
 		CC55EBA517619CF2DFA7F5C2 /* libPods-BCAudioApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52602002AE1131062EA1BB71 /* libPods-BCAudioApp.a */; };
 /* End PBXBuildFile section */
 
@@ -99,8 +107,17 @@
 		76673D00228E958400BD6BC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76673D02228E958400BD6BC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76673D03228E958400BD6BC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7669EF422307E0EF00FF06D8 /* BCUploadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCUploadRequest.m; sourceTree = "<group>"; };
+		7669EF432307E0EF00FF06D8 /* BCUploadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCUploadRequest.h; sourceTree = "<group>"; };
+		7669EF452307E11100FF06D8 /* BCDownloadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCDownloadManager.h; sourceTree = "<group>"; };
+		7669EF462307E11100FF06D8 /* BCDownloadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCDownloadManager.m; sourceTree = "<group>"; };
+		7669EF482307EC7400FF06D8 /* BCCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCCache.h; sourceTree = "<group>"; };
+		7669EF492307EC7400FF06D8 /* BCCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCCache.m; sourceTree = "<group>"; };
 		767410F822F923D700A9A198 /* BCDateFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCDateFormatter.h; sourceTree = "<group>"; };
 		767410F922F923D700A9A198 /* BCDateFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCDateFormatter.m; sourceTree = "<group>"; };
+		767410FB22F93F6D00A9A198 /* BCControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCControlView.h; sourceTree = "<group>"; };
+		767410FC22F93F6D00A9A198 /* BCControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCControlView.m; sourceTree = "<group>"; };
+		7674112822FBC92400A9A198 /* certificate.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = certificate.der; sourceTree = "<group>"; };
 		76B59B6422E1AD5A008644DB /* music-17.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "music-17.mp3"; sourceTree = "<group>"; };
 		76B59B6522E1AD5A008644DB /* music-4.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = "music-4.flac"; sourceTree = "<group>"; };
 		76B59B6622E1AD5A008644DB /* music-11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "music-11.mp3"; sourceTree = "<group>"; };
@@ -164,6 +181,12 @@
 		76BE695E2290165400ECFB2F /* BCAudioUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCAudioUtil.m; sourceTree = "<group>"; };
 		76BE696022929C8000ECFB2F /* NSObject+BCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+BCModel.h"; sourceTree = "<group>"; };
 		76BE696122929C8000ECFB2F /* NSObject+BCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BCModel.m"; sourceTree = "<group>"; };
+		76C8C88223098016001841C1 /* BCPresentTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCPresentTransition.h; sourceTree = "<group>"; };
+		76C8C88323098016001841C1 /* BCPresentTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCPresentTransition.m; sourceTree = "<group>"; };
+		76C8C88523098289001841C1 /* UIViewController+BCTransitionAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BCTransitionAnimation.h"; sourceTree = "<group>"; };
+		76C8C88623098289001841C1 /* UIViewController+BCTransitionAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BCTransitionAnimation.m"; sourceTree = "<group>"; };
+		76C8C8882309909D001841C1 /* BCDismissTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCDismissTransition.h; sourceTree = "<group>"; };
+		76C8C8892309909D001841C1 /* BCDismissTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCDismissTransition.m; sourceTree = "<group>"; };
 		A22F44703CA14C5BEBDD6493 /* Pods-BCAudioApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCAudioApp.release.xcconfig"; path = "Target Support Files/Pods-BCAudioApp/Pods-BCAudioApp.release.xcconfig"; sourceTree = "<group>"; };
 		ECE6C390B5582D9906D26550 /* Pods-BCAudioApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCAudioApp.debug.xcconfig"; path = "Target Support Files/Pods-BCAudioApp/Pods-BCAudioApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,6 +228,7 @@
 		7646203922D43E0100178C17 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
+				76C8C88B230990A4001841C1 /* Transition */,
 				76B59BC222E5E8ED008644DB /* Model */,
 				76B59BC122E5E8E4008644DB /* View */,
 				76B59BC022E5E8D9008644DB /* Controller */,
@@ -217,6 +241,8 @@
 			children = (
 				764DEFCC22A272A0002EDECA /* BCSlider.h */,
 				764DEFCD22A272A0002EDECA /* BCSlider.m */,
+				767410FB22F93F6D00A9A198 /* BCControlView.h */,
+				767410FC22F93F6D00A9A198 /* BCControlView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -264,6 +290,7 @@
 		76673CF3228E958200BD6BC6 /* BCAudioApp */ = {
 			isa = PBXGroup;
 			children = (
+				7669EF3E2307D42800FF06D8 /* Network */,
 				76B59B9D22E1BDB5008644DB /* Cache */,
 				76B59BA722E1BDC7008644DB /* Categary */,
 				7641C22222F31B6C00F27009 /* LoadImage */,
@@ -274,12 +301,24 @@
 				76BE69682292AE9300ECFB2F /* Home */,
 				76673CF4228E958200BD6BC6 /* AppDelegate.h */,
 				76673CF5228E958200BD6BC6 /* AppDelegate.m */,
+				7674112822FBC92400A9A198 /* certificate.der */,
 				76673CFA228E958200BD6BC6 /* Main.storyboard */,
 				76673CFF228E958400BD6BC6 /* LaunchScreen.storyboard */,
 				76673D02228E958400BD6BC6 /* Info.plist */,
 				76673D03228E958400BD6BC6 /* main.m */,
 			);
 			path = BCAudioApp;
+			sourceTree = "<group>";
+		};
+		7669EF3E2307D42800FF06D8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7669EF432307E0EF00FF06D8 /* BCUploadRequest.h */,
+				7669EF422307E0EF00FF06D8 /* BCUploadRequest.m */,
+				7669EF452307E11100FF06D8 /* BCDownloadManager.h */,
+				7669EF462307E11100FF06D8 /* BCDownloadManager.m */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		767410F722F923A700A9A198 /* Audio */ = {
@@ -331,6 +370,8 @@
 				76B59BA022E1BDB5008644DB /* BCMemoryCache.m */,
 				76B59BA122E1BDB5008644DB /* BCDiskCache.h */,
 				76B59B9E22E1BDB5008644DB /* BCDiskCache.m */,
+				7669EF482307EC7400FF06D8 /* BCCache.h */,
+				7669EF492307EC7400FF06D8 /* BCCache.m */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -442,6 +483,19 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		76C8C88B230990A4001841C1 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				76C8C88223098016001841C1 /* BCPresentTransition.h */,
+				76C8C88323098016001841C1 /* BCPresentTransition.m */,
+				76C8C8882309909D001841C1 /* BCDismissTransition.h */,
+				76C8C8892309909D001841C1 /* BCDismissTransition.m */,
+				76C8C88523098289001841C1 /* UIViewController+BCTransitionAnimation.h */,
+				76C8C88623098289001841C1 /* UIViewController+BCTransitionAnimation.m */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
 		F24FC7BDD9ACF8B92938AA6F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -523,6 +577,7 @@
 				76B59B8122E1AD5B008644DB /* music-12.mp3 in Resources */,
 				76B59B7F22E1AD5B008644DB /* music-21.mp3 in Resources */,
 				76B59B7D22E1AD5B008644DB /* music-11.mp3 in Resources */,
+				7674112922FBC92700A9A198 /* certificate.der in Resources */,
 				76B59B8522E1AD5B008644DB /* music-18.mp3 in Resources */,
 				76B59B8E22E1AD5B008644DB /* music-22.mp3 in Resources */,
 				76B59B7E22E1AD5B008644DB /* music-8.mp3 in Resources */,
@@ -571,8 +626,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76C8C88423098016001841C1 /* BCPresentTransition.m in Sources */,
+				7669EF442307E0EF00FF06D8 /* BCUploadRequest.m in Sources */,
 				76673CF9228E958200BD6BC6 /* ViewController.m in Sources */,
 				7648350922A510AC003D452B /* BCCPUMonitor.m in Sources */,
+				7669EF4A2307EC7400FF06D8 /* BCCache.m in Sources */,
 				76673D04228E958400BD6BC6 /* main.m in Sources */,
 				76B59BB622E5C157008644DB /* BCAsset.m in Sources */,
 				76B59BAF22E1BDC7008644DB /* UIImageView+NetImg.m in Sources */,
@@ -580,18 +638,22 @@
 				76B59BAE22E1BDC7008644DB /* UIImage+NetImg.m in Sources */,
 				76BE6955228EB6F400ECFB2F /* BCAudioPlayerViewController.m in Sources */,
 				76B59BB922E5D356008644DB /* BCAssetManager.m in Sources */,
+				76C8C88A2309909D001841C1 /* BCDismissTransition.m in Sources */,
 				76BE696222929C8000ECFB2F /* NSObject+BCModel.m in Sources */,
 				7607A82D22F3C408006666C6 /* NSData+Security.m in Sources */,
 				76B59BBC22E5DFA6008644DB /* UIImageView+Photo.m in Sources */,
 				76B59BB022E1BDC7008644DB /* NSString+Security.m in Sources */,
+				7669EF472307E11100FF06D8 /* BCDownloadManager.m in Sources */,
 				76B59BA622E1BDB5008644DB /* BCImageCache.m in Sources */,
 				76B59BE222EAE081008644DB /* BCAudioRemoteCenter.m in Sources */,
 				76B59BBF22E5E7CE008644DB /* BCPhotoBrowserViewController.m in Sources */,
 				76673CF6228E958200BD6BC6 /* AppDelegate.m in Sources */,
+				767410FD22F93F6D00A9A198 /* BCControlView.m in Sources */,
 				76B59BB322E5C02A008644DB /* BCGridViewCell.m in Sources */,
 				764DEFD922A50E47002EDECA /* BCCatonMonitor.m in Sources */,
 				764DEFD322A27BD1002EDECA /* BCCircleDiscView.m in Sources */,
 				76B59BC522E5E94E008644DB /* BCPhotoAuthorization.m in Sources */,
+				76C8C88723098289001841C1 /* UIViewController+BCTransitionAnimation.m in Sources */,
 				764DEFCE22A272A0002EDECA /* BCSlider.m in Sources */,
 				76B722DA22D6F5A2001C9412 /* BCFPSMonitor.m in Sources */,
 				76BE6959228FF55000ECFB2F /* BCAudioPlayer.m in Sources */,

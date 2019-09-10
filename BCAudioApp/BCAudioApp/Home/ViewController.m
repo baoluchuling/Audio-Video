@@ -18,15 +18,15 @@
 #import "BCPhotoListViewController.h"
 #import "BCDateFormatter.h"
 
-@interface ViewController () <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface ViewController () <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, NSURLSessionDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (weak, nonatomic) IBOutlet UIView *emptyView;
 
-@property (nonatomic, strong) NSMutableArray *musicArray;
+@property (nonatomic, strong) UIView *headerView;
 
-@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) NSMutableArray *musicArray;
 
 @end
 

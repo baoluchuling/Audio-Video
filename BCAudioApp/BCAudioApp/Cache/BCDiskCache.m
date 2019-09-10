@@ -35,6 +35,9 @@
     dispatch_sync(self.ioQueue, ^{
         NSFileManager *fileManager = [NSFileManager defaultManager];
         
+        /*
+         * 创建文件夹不要使用.download结尾
+         */
         if (![fileManager fileExistsAtPath:path]) {
             NSError *error;
             BOOL result = [fileManager createDirectoryAtPath:path
@@ -75,7 +78,7 @@
     return data;
 }
 
-- (void)setObject:(__kindof NSObject *)object forKey:(NSString *)key
+- (void)setObject:(NSData *)object forKey:(NSString *)key
 {
     if (!key) {
         return;
@@ -86,10 +89,51 @@
         return;
     }
     
-    NSString *filePath = [self filePathWithName:key];
+    [self writeToFile:[self filePathWithName:key] data:object];
+}
 
+- (void)appendObject:(NSData *)object forKey:(NSString *)key
+{
+    if (!key || !object) {
+        return;
+    }
+    
+    NSString *filePath = [self filePathWithName:key];
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+        [self writeToFile:filePath data:object];
+    } else {
+        // 追加
+        dispatch_barrier_async(self.ioQueue, ^{
+            NSFileHandle *handle = [NSFileHandle fileHandleForUpdatingAtPath:filePath];
+            
+            [handle seekToEndOfFile];
+            
+            NSError *error;
+            if (@available(iOS 13.0, *)) {
+                [handle writeData:object error:&error];
+            } else {
+                [handle writeData:object];
+            }
+            
+            [handle closeFile];
+            
+            if (error) {
+                NSLog(@"文件写入失败！");
+            }
+        });
+    }
+}
+
+- (void)writeToFile:(NSString *)file data:(NSData *)data
+{
     dispatch_barrier_async(self.ioQueue, ^{
-        [object writeToFile:filePath atomically:NO];
+        NSError *error;
+        BOOL result = [data writeToFile:file options:NSDataWritingAtomic error:&error];
+        
+        if (error) {
+            NSLog(@"文件写入失败！");
+        }
     });
 }
 
@@ -101,7 +145,12 @@
         BOOL hasFile = [[NSFileManager defaultManager] fileExistsAtPath:filePath];
         
         if (hasFile) {
-            [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
+            NSError *error;
+            [[NSFileManager defaultManager] removeItemAtPath:filePath error:&error];
+            
+            if (error) {
+                NSLog(@"文件删除错误！");
+            }
         }
     });
 }
@@ -112,9 +161,19 @@
         BOOL hasFolder = [[NSFileManager defaultManager] fileExistsAtPath:self.basePath];
         
         if (hasFolder) {
-            [[NSFileManager defaultManager] removeItemAtPath:self.basePath error:nil];
+            NSError *error;
+            [[NSFileManager defaultManager] removeItemAtPath:self.basePath error:&error];
+            
+            if (error) {
+                NSLog(@"文件夹删除错误！");
+            }
         }
     });
+}
+
+- (size_t)sizeOfFileWithKey:(NSString *)key
+{
+    return [[[NSFileManager defaultManager] attributesOfItemAtPath:[self filePathWithName:key] error:nil][NSFileSize] unsignedLongLongValue];
 }
 
 #pragma mark getter & setter

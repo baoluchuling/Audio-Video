@@ -8,12 +8,6 @@
 
 #import "BCDateFormatter.h"
 
-@interface BCDateFormatter ()
-
-@property (nonatomic, strong) NSDateFormatter *dateFormatter;
-
-@end
-
 static BCDateFormatter *formatter = nil;
 
 @implementation BCDateFormatter
@@ -27,39 +21,23 @@ static BCDateFormatter *formatter = nil;
     return formatter;
 }
 
-- (instancetype)init
+- (NSString *)currentDate
 {
-    self = [super init];
-    
-    if (self) {
-        self.dateFormatter = [[NSDateFormatter alloc] init];
-    }
-    
-    return self;
+    return [self stringFromDate:[NSDate date] format:@"yyyy-MM-dd HH:mm:ss.SSS"];
 }
 
 - (NSString *)stringFromDate:(NSDate *)date format:(NSString *)format
 {
-    [self.dateFormatter setDateFormat:format];
+    [self setDateFormat:format];
     
     return [self stringFromDate:date];
 }
 
-- (NSString *)stringFromDate:(NSDate *)date
-{
-    return [self.dateFormatter stringFromDate:date];
-}
-
 - (NSDate *)dateFromString:(NSString *)string format:(NSString *)format
 {
-    [self.dateFormatter setDateFormat:format];
+    [self setDateFormat:format];
     
     return [self dateFromString:string];
-}
-
-- (NSDate *)dateFromString:(NSString *)string
-{
-    return [self.dateFormatter dateFromString:string];
 }
 
 @end

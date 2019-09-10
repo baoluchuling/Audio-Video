@@ -13,20 +13,6 @@
 #import "NSString+Security.h"
 #import "NSData+Security.h"
 
-UIImageOrientation UIImageOrientationForCGImagePropertyOrientation(cgOrientation) {
-    switch (cgOrientation) {
-        case kCGImagePropertyOrientationUp: return UIImageOrientationUp;
-        case kCGImagePropertyOrientationDown: return UIImageOrientationDown;
-        case kCGImagePropertyOrientationLeft: return UIImageOrientationLeft;
-        case kCGImagePropertyOrientationRight: return UIImageOrientationRight;
-        case kCGImagePropertyOrientationUpMirrored: return UIImageOrientationUpMirrored;
-        case kCGImagePropertyOrientationDownMirrored: return UIImageOrientationDownMirrored;
-        case kCGImagePropertyOrientationLeftMirrored: return UIImageOrientationLeftMirrored;
-        case kCGImagePropertyOrientationRightMirrored: return UIImageOrientationRightMirrored;
-            default: return UIImageOrientationUp;
-    }
-};
-
 static BCImageLoader *loader = nil;
 
 @interface BCImageLoader ()
@@ -100,38 +86,6 @@ static BCImageLoader *loader = nil;
     
     return image;
 }
-
-//+ (UIImage *)decoderImageWithSource:(NSData *)source
-//{
-//    NSDictionary *imageSourceOptions =
-//    @{
-//        (__bridge NSString *)kCGImageSourceShouldCache: @NO // 原始图像不要解码
-//    };
-//    CGImageSourceRef imageSource = imageSource = CGImageSourceCreateWithData((__bridge CFDataRef)source, (__bridge CFDictionaryRef)imageSourceOptions);
-//    if (!imageSource) {
-//        return [UIImage imageWithData:source];
-//    }
-//
-//    CFDictionaryRef imageProperties = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, NULL);
-//
-//    int orientation = [(NSNumber *)CFDictionaryGetValue(imageProperties, kCGImagePropertyOrientation) intValue];
-//
-//    UIImageOrientation imageOrientation = UIImageOrientationForCGImagePropertyOrientation(orientation);
-//
-//    NSDictionary *downsampleOptions =
-//    @{
-//        (__bridge NSString *)kCGImageSourceShouldCacheImmediately: @YES,  // 缩小图像的同时进行解码
-//    };
-//    CGImageRef imageRef = CGImageSourceCreateImageAtIndex(imageSource, 0, (__bridge CFDictionaryRef)downsampleOptions);
-//
-//    UIImage * image = [[UIImage alloc] initWithCGImage:imageRef scale:[UIScreen mainScreen].scale orientation:imageOrientation];
-//
-//    CGImageRelease(imageRef);
-//
-//    CFRelease(imageSource);
-//
-//    return image;
-//}
 
 #pragma mark instance method
 - (void)bc_loadImageWithURL:(NSString *)url

@@ -20,6 +20,8 @@
 
 @property (nonatomic, weak) id <BCGridViewCellDelegate> delegate;
 
+@property (readonly) UIImageView *imageView;
+
 @property (nonatomic, assign) BOOL isSelect;
 @property (nonatomic, assign) NSInteger index;
 

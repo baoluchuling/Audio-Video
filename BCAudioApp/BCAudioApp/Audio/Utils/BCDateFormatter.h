@@ -8,14 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BCDateFormatter : NSObject
+@interface BCDateFormatter : NSDateFormatter
 
 + (instancetype)shareInstance;
 
-- (NSString *)stringFromDate:(NSDate *)date;
-- (NSString *)stringFromDate:(NSDate *)date format:(NSString *)format;
+- (NSString *)currentDate;
 
-- (NSDate *)dateFromString:(NSString *)string;
+- (NSString *)stringFromDate:(NSDate *)date format:(NSString *)format;
 - (NSDate *)dateFromString:(NSString *)string format:(NSString *)format;
 
 @end
